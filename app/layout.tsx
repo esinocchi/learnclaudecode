@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   title: "Claude Code: A Field Guide, Penn State CS",
   description:
     "A curated resource guide for Penn State freshman CS students building real projects with Claude Code.",
+
 };
 
 export default function RootLayout({
