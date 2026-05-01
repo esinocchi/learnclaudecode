@@ -7,6 +7,7 @@ interface Props {
 }
 
 const headerStyle: React.CSSProperties = {
+  position: "relative",
   borderBottom: "1px solid oklch(87% 0.014 75)",
   padding: "1rem 3rem",
   display: "flex",
@@ -44,6 +45,25 @@ export function SiteHeader({ linked = false }: Props) {
 
   return (
     <header style={headerStyle}>
+      <a
+        href="#main-content"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "0.5rem",
+          zIndex: 100,
+          padding: "0.625rem 1rem",
+          backgroundColor: "oklch(18% 0.015 250)",
+          color: "oklch(97% 0.008 75)",
+          fontSize: "0.875rem",
+          fontWeight: 700,
+          borderRadius: "4px",
+          textDecoration: "none",
+        }}
+        className="focus:left-4 focus:outline focus:outline-2 focus:outline-offset-2"
+      >
+        Skip to main content
+      </a>
       {linked ? (
         <Link href="/" style={brandStyle}>
           <ClaudeLogo size={18} color="oklch(68% 0.2 75)" />

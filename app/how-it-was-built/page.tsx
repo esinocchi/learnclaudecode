@@ -7,6 +7,7 @@ export default function HowItWasBuilt() {
       <SiteHeader linked />
 
       <main
+        id="main-content"
         style={{
           maxWidth: "720px",
           margin: "0 auto",

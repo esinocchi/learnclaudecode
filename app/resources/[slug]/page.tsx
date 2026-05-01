@@ -61,7 +61,7 @@ export default async function ResourcePage({ params, searchParams }: Props) {
           }}
         >
           {/* ── Main ── */}
-          <main>
+          <main id="main-content">
             {/* Back */}
             <Link
               href={backHref}
@@ -239,18 +239,20 @@ export default async function ResourcePage({ params, searchParams }: Props) {
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
               {ABSTRACT_LABELS.map(({ key, label, id }) => (
                 <div key={key} id={id} style={{ scrollMarginTop: "2rem" }}>
-                  <p
+                  <h2
                     style={{
                       fontSize: "0.6875rem",
+                      lineHeight: 1.3,
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
                       color: "oklch(68% 0.2 75)",
-                      marginBottom: "0.625rem",
+                      margin: "0 0 0.625rem 0",
                       fontWeight: 700,
+                      fontFamily: "var(--font-body)",
                     }}
                   >
                     {label}
-                  </p>
+                  </h2>
                   <p
                     style={{
                       fontSize: "1rem",

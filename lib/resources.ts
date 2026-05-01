@@ -36,7 +36,7 @@ export const sections: Section[] = [
     number: "02",
     title: "Building Your Project",
     intro:
-      "Code is only part of a project. These three resources cover version control, frontend design, and professional development workflow, the pieces that determine whether your project looks and functions like it was built with intention.",
+      "Code is only part of a project. These two resources cover frontend design and professional development workflow, the pieces that determine whether your project looks and functions like it was built with intention.",
   },
   {
     id: "section-3",
@@ -59,7 +59,7 @@ export const resources: Resource[] = [
     teaser:
       "The official starting point for Claude Code. Covers installation, prompt structure, and command reference, and tells you honestly where the tool falls short.",
     abstract: {
-      what: "The primary reference for Claude Code, maintained by Anthropic. Covers installation, prompt strategies, CLI commands, and workflow integrations. Authoritative and regularly updated.",
+      what: "The primary reference for Claude Code, maintained by Anthropic. Covers installation, prompt strategies, command-line interface (CLI) commands, and workflow integrations. Authoritative and regularly updated.",
       content:
         "Organized into a quickstart, a prompt-writing guide, a full command reference, and workflow integration guides. There is also a section on what Claude Code handles well versus where it struggles, which is worth reading before you start.",
       relevance:
@@ -67,7 +67,7 @@ export const resources: Resource[] = [
       tips:
         "Read the quickstart, get it running, build something small. Return to specific sections as questions come up. The prompt structure section is the most useful part for a beginner. Read it carefully and keep notes nearby while you work. Most unexpected outputs from Claude Code trace back to a prompt that was vague or missing project context.",
     },
-    nextStep: "Open the Quickstart and follow it end to end — about 30 minutes.",
+    nextStep: "Open the Quickstart and follow it end to end. About thirty minutes.",
   },
   {
     slug: "karpathy-claude-skills",
@@ -80,36 +80,15 @@ export const resources: Resource[] = [
     teaser:
       "Andrej Karpathy, AI researcher and former OpenAI co-founder, has made his Claude Code configuration public. This is what expert usage looks like in practice.",
     abstract: {
-      what: "A GitHub repository compiled by community member forrestchang, containing the Claude Code configurations Karpathy has shared publicly. Karpathy co-founded OpenAI, led Tesla Autopilot AI, and is an active Claude Code user who is transparent about how he works. These configurations are a direct look at how an expert structures AI-assisted development.",
+      what: "A GitHub repository compiled by community member forrestchang, containing the Claude Code configurations Karpathy has shared publicly. Karpathy co-founded OpenAI, led Tesla Autopilot's artificial intelligence (AI) work, and is an active Claude Code user who is transparent about how he works. These configurations are a direct look at how an expert structures AI-assisted development.",
       content:
         "Contains CLAUDE.md files, the project-level instruction files that tell Claude Code how to behave in a specific project, along with skill definitions and prompt configurations. The files are sparse: short, direct sentences covering constraints, conventions, and task scope. No decoration, just function.",
       relevance:
-        "Seeing how an expert uses a tool is often more useful than reading the documentation. The CLAUDE.md file is one of the most underused Claude Code features for beginners, and Karpathy's examples show why it matters. A well-written CLAUDE.md changes the quality of everything Claude generates for your project. Adapting even a few lines to a personal project will produce noticeably better results than running Claude Code without one.",
+        "For a Penn State student new to Claude Code, seeing how an expert uses the tool teaches more than the documentation alone. The CLAUDE.md file is the most underused Claude Code feature for first-time users, and Karpathy's examples show why it matters. A well-written CLAUDE.md changes the quality of everything Claude generates for your project. Even four or five adapted lines will produce noticeably better results than running Claude Code without one.",
       tips:
-        "Read the CLAUDE.md files before anything else in the repository. Notice how they are written: short, imperative sentences that state constraints and conventions without explanation. Then open a blank file in your own project and start adding instructions. What language are you using? What should Claude never change? What conventions matter? Three or four lines is enough to see an immediate improvement. Do not copy these files directly. Understand why each instruction is there and include only what applies to your project.",
+        "Read the CLAUDE.md files before anything else in the repository. Notice the structure: short imperative sentences stating constraints and conventions without explanation. Open a blank file in your own project and add three or four lines covering what language you use, what Claude should never change, and what conventions matter. That is enough to see an immediate improvement. Do not copy Karpathy's files directly. Understand why each instruction is there and keep only what applies to your project.",
     },
     nextStep: "Read one CLAUDE.md file, then write a four-line CLAUDE.md for your own project.",
-  },
-  {
-    slug: "github-docs",
-    title: "GitHub Docs",
-    url: "https://docs.github.com",
-    displayUrl: "docs.github.com",
-    category: "Platform Documentation",
-    sectionId: "section-2",
-    sectionNumber: "02",
-    teaser:
-      "Claude Code generates code on your machine. GitHub is where that code gets stored, backed up, and seen by employers. This documentation covers how to connect the two.",
-    abstract: {
-      what: "The official documentation for GitHub, the world's largest code hosting platform, maintained by GitHub. Covers the full feature set: creating repositories, committing and pushing code, branching, writing documentation with Markdown, and collaborating with others.",
-      content:
-        "The getting-started section includes a Hello World guide that takes you from account creation to a working repository in about ten minutes. Beyond that, the docs cover README structure, GitHub Pages for free project hosting, releases, issues, and pull requests. The GitHub CLI documentation is also included, which integrates cleanly with Claude Code workflows.",
-      relevance:
-        "Without a GitHub repository, your code exists only on your machine. It cannot be shared, linked from a resume, reviewed, or recovered if something goes wrong. GitHub is the storage layer for your portfolio. The docs teach you not just how to push code, but how to present it. A well-written README tells a hiring manager something specific about your project before they read a single line of code. For a Penn State student, two or three documented repositories is the difference between a GitHub link and one worth clicking.",
-      tips:
-        "Start with the Hello World guide. When you create a repository for a Claude Code project, write the README before you write any code. It forces you to define what the project does, which makes it easier to explain to Claude and to an employer. Commit regularly, every meaningful change should be its own commit with a short message. A commit history showing incremental progress is more credible than a single large commit. Use GitHub Pages to deploy any web project for free and include the live URL in the repository.",
-    },
-    nextStep: "Complete the Hello World guide and create your first repository — about 10 minutes.",
   },
   {
     slug: "impeccable-style",
@@ -145,7 +124,7 @@ export const resources: Resource[] = [
     abstract: {
       what: "A plugin for Claude Code created by Jesse (obra) and distributed through the Claude Plugin Hub. A collection of 14 composable skills that guide Claude Code through professional development practices: planning before coding, test-driven development, systematic debugging, and code review. One of the most widely adopted plugins in the ecosystem.",
       content:
-        "Covers the full development lifecycle through discrete, composable skills. Brainstorming refines rough ideas before any code is written. Writing plans breaks features into reviewable tasks. Git worktrees isolate work on separate branches so nothing breaks unexpectedly. TDD enforces the red-green-refactor cycle: write the test first, make it pass, then clean up the code. A code-review skill validates finished work against the original plan. A SessionStart hook activates workflows automatically at the start of each session. Supports TypeScript, JavaScript, Python, Git, and Bash.",
+        "Covers the full development lifecycle through discrete, composable skills. Brainstorming refines rough ideas before any code is written. Writing plans breaks features into reviewable tasks. Git worktrees isolate work on separate branches so nothing breaks unexpectedly. Test-driven development (TDD) enforces the red-green-refactor cycle: write the test first, make it pass, then clean up the code. A code-review skill validates finished work against the original plan. A SessionStart hook activates workflows automatically at the start of each session. Supports TypeScript, JavaScript, Python, Git, and Bash.",
       relevance:
         "The main challenge beginners face with Claude Code is not getting it to generate code, it is getting it to generate good code in a structured way. Without guidance, Claude Code skips planning and produces output that works once but is hard to change or explain. Superpowers enforces the practices professionals use: think before you code, plan before you implement, test as you go. For a student building a resume project, this means a commit history showing deliberate development, tested code, and structure that can be explained in an interview.",
       tips:
@@ -168,9 +147,9 @@ export const resources: Resource[] = [
       content:
         "A profile includes a bio, a contribution graph showing commit activity over the past year, the ability to pin up to six repositories, and a feed of recent public activity. Each repository can include a README, description, topic tags, a live demo link, and a license. GitHub Pages provides free static site hosting for any public repository, which is particularly useful for deploying web-based projects built with Claude Code.",
       relevance:
-        "Employers in software engineering routinely check GitHub profiles during hiring. A profile with documented projects shows that you can build things, understand version control, and explain your work. A profile with no activity, or with repositories that have no README, communicates the opposite. The projects you build with Claude Code belong on GitHub, presented in a way that communicates clearly.",
+        "Recruiters interviewing Penn State CS students check GitHub profiles before the interview. A profile with documented projects shows that you can build things, understand version control, and explain your work. A profile with no activity, or with repositories that have no README, communicates the opposite. The projects you build with Claude Code belong on GitHub, presented in a way that reads clearly to a hiring manager.",
       tips:
-        "Pin your two or three best projects. Write a README for every project that answers three questions: what it does, how to run it, and what you decided while building it. If there is a live demo, link to it prominently. Add a brief bio mentioning Penn State and your intended major, and include a LinkedIn link if you have one. Commit regularly as you build, not just at the end. A commit history showing a project evolving over several days is more credible than a single large commit.",
+        "Pin your two or three best projects. Write a README for each that answers three questions: what it does, how to run it, and what you decided while building it. Link to a live demo if there is one. Add a brief bio mentioning Penn State and your intended major, and include a LinkedIn link if you have one. Commit regularly as you build. A history showing a project evolving over several days is more credible than a single large commit.",
     },
     nextStep: "Pin two or three repositories on your profile and write a README for each.",
   },

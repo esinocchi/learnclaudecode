@@ -11,7 +11,7 @@ const FRONT_MATTER = [
   {
     eyebrow: "Scope",
     heading: "What's in it (and what's not)",
-    body: "Seven resources covering setup, building, and showcasing a project. The guide focuses on the workflow around Claude Code: documentation, expert configurations, version control, design, and how to present finished work. It does not cover programming fundamentals, computer science theory, or general AI literacy.",
+    body: "Six resources covering setup, building, and showcasing a project. The guide focuses on the workflow around Claude Code: documentation, expert configurations, design, development workflow, and how to present finished work. It does not cover programming fundamentals, computer science theory, or general AI literacy.",
   },
   {
     eyebrow: "Prerequisites",
@@ -26,7 +26,7 @@ const FRONT_MATTER = [
   {
     eyebrow: "Usage",
     heading: "How to use this guide",
-    body: "Start with Section 1 if you have never used Claude Code. Each resource has its own page with a direct link, a four-part abstract (what, contents, relevance, usage tips), and a one-line Next Step. Read the Next Step before you click through — it tells you exactly what to do at the resource. Return here whenever you start a new phase of the project.",
+    body: "Start with Section 1 if you have never used Claude Code. Each resource has its own page with a direct link, a four-part abstract (what, contents, relevance, usage tips), and a one-line Next Step. Read the Next Step before you click through. It tells you exactly what to do at the resource. Return here whenever you start a new phase of the project.",
   },
 ] as const;
 
@@ -37,6 +37,7 @@ export default function Home() {
 
       {/* Centered content wrapper */}
       <div
+        id="main-content"
         style={{
           maxWidth: "960px",
           margin: "0 auto",
@@ -88,7 +89,7 @@ export default function Home() {
             }}
           >
             A curated guide to using Claude Code for personal projects, from
-            idea to deployable application. Seven resources organized around
+            idea to deployable application. Six resources organized around
             the three things that actually matter.
           </p>
 
