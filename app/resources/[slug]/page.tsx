@@ -19,10 +19,10 @@ interface Props {
 }
 
 const ABSTRACT_LABELS = [
-  { key: "what", label: "What is this?" },
-  { key: "content", label: "What's in it?" },
-  { key: "relevance", label: "Why it matters" },
-  { key: "tips", label: "Tips for using it" },
+  { key: "what", label: "What it is", id: "what-it-is" },
+  { key: "content", label: "What's in it", id: "whats-in-it" },
+  { key: "relevance", label: "Why it matters for you", id: "why-it-matters" },
+  { key: "tips", label: "How to use it efficiently", id: "how-to-use" },
 ] as const;
 
 export default async function ResourcePage({ params, searchParams }: Props) {
@@ -138,32 +138,107 @@ export default async function ResourcePage({ params, searchParams }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontSize: "0.8125rem",
-                color: "oklch(68% 0.2 75)",
-                textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "0.25rem",
-                marginBottom: "2.5rem",
+                gap: "0.5rem",
+                padding: "0.75rem 1.25rem",
+                border: "1px solid oklch(68% 0.2 75)",
+                borderRadius: "4px",
+                fontSize: "0.875rem",
                 fontWeight: 700,
+                color: "oklch(56% 0.22 75)",
+                textDecoration: "none",
+                marginBottom: "0.75rem",
+                transition: "background-color 0.2s ease, color 0.2s ease",
                 cursor: "pointer",
               }}
-              className="hover:underline"
+              className="hover:bg-accent hover:text-white"
             >
-              {resource.displayUrl} ↗
+              Visit resource
+              <span aria-hidden="true">↗</span>
             </a>
 
-            <div
+            <p
               style={{
-                borderTop: "1px solid oklch(87% 0.014 75)",
+                fontSize: "0.75rem",
+                color: "oklch(58% 0.008 250)",
+                fontFamily: "var(--font-body)",
                 marginBottom: "2.5rem",
+                wordBreak: "break-all",
               }}
-            />
+            >
+              {resource.displayUrl}
+            </p>
+
+            {/* Page-level TOC */}
+            <nav
+              aria-label="On this page"
+              style={{
+                marginBottom: "2.5rem",
+                paddingTop: "1.75rem",
+                paddingBottom: "1.75rem",
+                borderTop: "1px solid oklch(87% 0.014 75)",
+                borderBottom: "1px solid oklch(87% 0.014 75)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "oklch(58% 0.008 250)",
+                  marginBottom: "0.875rem",
+                  fontWeight: 700,
+                }}
+              >
+                On this page
+              </p>
+              <ol
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.375rem",
+                }}
+              >
+                {ABSTRACT_LABELS.map(({ id, label }, idx) => (
+                  <li key={id}>
+                    <a
+                      href={`#${id}`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "baseline",
+                        gap: "0.625rem",
+                        fontSize: "0.875rem",
+                        color: "oklch(40% 0.012 250)",
+                        textDecoration: "none",
+                        transition: "color 0.2s ease",
+                      }}
+                      className="hover:text-accent-deep"
+                    >
+                      <span
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          fontSize: "0.75rem",
+                          fontWeight: 300,
+                          color: "oklch(68% 0.2 75)",
+                        }}
+                      >
+                        {String(idx + 1).padStart(2, "0")}
+                      </span>
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
 
             {/* Abstract sections */}
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-              {ABSTRACT_LABELS.map(({ key, label }) => (
-                <div key={key}>
+              {ABSTRACT_LABELS.map(({ key, label, id }) => (
+                <div key={key} id={id} style={{ scrollMarginTop: "2rem" }}>
                   <p
                     style={{
                       fontSize: "0.6875rem",
@@ -189,6 +264,40 @@ export default async function ResourcePage({ params, searchParams }: Props) {
                 </div>
               ))}
             </div>
+
+            {/* Next Step */}
+            <aside
+              style={{
+                marginTop: "3rem",
+                padding: "1.5rem 1.75rem",
+                backgroundColor: "oklch(94% 0.025 75)",
+                borderLeft: "3px solid oklch(68% 0.2 75)",
+                borderRadius: "2px",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "0.6875rem",
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "oklch(56% 0.22 75)",
+                  marginBottom: "0.5rem",
+                  fontWeight: 700,
+                }}
+              >
+                Next step
+              </p>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "oklch(18% 0.015 250)",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                {resource.nextStep}
+              </p>
+            </aside>
 
             {/* Return link */}
             <div

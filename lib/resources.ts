@@ -13,6 +13,7 @@ export interface Resource {
     relevance: string;
     tips: string;
   };
+  nextStep: string;
 }
 
 export interface Section {
@@ -66,6 +67,7 @@ export const resources: Resource[] = [
       tips:
         "Read the quickstart, get it running, build something small. Return to specific sections as questions come up. The prompt structure section is the most useful part for a beginner. Read it carefully and keep notes nearby while you work. Most unexpected outputs from Claude Code trace back to a prompt that was vague or missing project context.",
     },
+    nextStep: "Open the Quickstart and follow it end to end — about 30 minutes.",
   },
   {
     slug: "karpathy-claude-skills",
@@ -86,6 +88,7 @@ export const resources: Resource[] = [
       tips:
         "Read the CLAUDE.md files before anything else in the repository. Notice how they are written: short, imperative sentences that state constraints and conventions without explanation. Then open a blank file in your own project and start adding instructions. What language are you using? What should Claude never change? What conventions matter? Three or four lines is enough to see an immediate improvement. Do not copy these files directly. Understand why each instruction is there and include only what applies to your project.",
     },
+    nextStep: "Read one CLAUDE.md file, then write a four-line CLAUDE.md for your own project.",
   },
   {
     slug: "github-docs",
@@ -106,6 +109,7 @@ export const resources: Resource[] = [
       tips:
         "Start with the Hello World guide. When you create a repository for a Claude Code project, write the README before you write any code. It forces you to define what the project does, which makes it easier to explain to Claude and to an employer. Commit regularly, every meaningful change should be its own commit with a short message. A commit history showing incremental progress is more credible than a single large commit. Use GitHub Pages to deploy any web project for free and include the live URL in the repository.",
     },
+    nextStep: "Complete the Hello World guide and create your first repository — about 10 minutes.",
   },
   {
     slug: "impeccable-style",
@@ -126,6 +130,7 @@ export const resources: Resource[] = [
       tips:
         "Run /impeccable teach before building any frontend component. This creates a .impeccable.md file that records your project's audience, tone, and aesthetic direction. Claude Code uses this file to make decisions specific to your project instead of defaulting to generic patterns. Use /impeccable craft when building a page or component. If the result looks off, /polish handles a final quality pass.",
     },
+    nextStep: "Install the plugin and run /impeccable teach in any project to set design context.",
   },
   {
     slug: "superpowers",
@@ -146,6 +151,7 @@ export const resources: Resource[] = [
       tips:
         "Skills activate based on context, so let the plugin run. When starting a new feature, describe what you want to build. The brainstorming skill guides you through refining the idea before any implementation begins. If you are new to test-driven development, the TDD skill is the lowest-friction way to learn the practice on real code: write the test first, then make it pass. Do not skip the planning step. The plan keeps Claude Code focused and prevents it from drifting into unrelated changes.",
     },
+    nextStep: "Install Superpowers and start your next feature with the brainstorming skill.",
   },
   {
     slug: "github-portfolio",
@@ -166,6 +172,7 @@ export const resources: Resource[] = [
       tips:
         "Pin your two or three best projects. Write a README for every project that answers three questions: what it does, how to run it, and what you decided while building it. If there is a live demo, link to it prominently. Add a brief bio mentioning Penn State and your intended major, and include a LinkedIn link if you have one. Commit regularly as you build, not just at the end. A commit history showing a project evolving over several days is more credible than a single large commit.",
     },
+    nextStep: "Pin two or three repositories on your profile and write a README for each.",
   },
   {
     slug: "penn-state-career-services",
@@ -186,6 +193,7 @@ export const resources: Resource[] = [
       tips:
         "Use the Projects section of your resume, do not bury project work in Other Experience. Write one bullet on what the project does and one on the technologies and decisions involved. Always include the GitHub link. If Career Services offers review appointments at your campus, book one after finishing your first project. A single twenty-minute review improves every resume you write afterward. Check their events calendar at the start of each semester for CS-specific workshops.",
     },
+    nextStep: "Download the CS resume template and add a Projects section with one entry.",
   },
 ];
 
